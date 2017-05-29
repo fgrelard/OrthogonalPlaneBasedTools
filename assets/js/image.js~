@@ -1,0 +1,9 @@
+
+function changeImage(element) {
+
+    document.getElementById('imgOurMethod').src = element;
+    document.getElementById('cornea').src = "Cornea/";
+    document.getElementById('lee').src = "Lee/";
+    document.getElementById('palagyi').src = "Palagyi/";
+    document.getElementById('couprie').src = "Couprie/";
+}
