@@ -98,9 +98,10 @@ body {
     line-height: 18px;
 }
 
-.contactname {
+.importantInfo {
     font-weight: 600;
 }
+
 
 .emph {
 	color: #e25f20;
@@ -1440,7 +1441,7 @@ blockquote {
 	font-style: italic;
 }
 
-p, ul, ol, dl, table {
+p, ul, ol, dl {
 	margin-bottom: 2em;
 }
 
@@ -1543,40 +1544,6 @@ form :-ms-input-placeholder {
 
 form ::-moz-focus-inner {
 	border: 0;
-}
-
-/* Tables */
-
-table {
-	width: 100%;
-}
-
-table.default {
-	width: 100%;
-}
-
-table.default tr {
-	border-top: solid 1px #eee;
-}
-
-table.default tr:first-child {
-	border-top: 0;
-}
-
-table.default td {
-	padding: 0.5em 1em 0.5em 1em;
-}
-
-table.default th {
-	text-align: left;
-	padding: 0.5em 1em 0.5em 1em;
-	font-weight: 800;
-	margin: 0 0 1em 0;
-}
-
-table.default thead {
-	background: #404248;
-	color: #fff;
 }
 
 /* Image */
@@ -2022,11 +1989,26 @@ ol.default li {
 	z-index: 1;
 }
 
+p.description {
+    padding-bottom: 1em;
+}
+
 /* Banner */
 
 #banner {
 	position: relative;
-	padding: 4.5em;
+	padding: 2.5em;
+}
+
+table.tg {
+    width: auto;
+    float: right;
+    
+}
+
+table tr td {
+    line-height: 1.2em;
+    padding-right: 2em;
 }
 
 #banner h2 {
@@ -2034,10 +2016,10 @@ ol.default li {
 	margin: 0.1em 0 0.35em 0;
 }
 
-#banner h3 {
-	font-size: 2.2em;
-	margin: 0.5em 0 0.5em 0;
-}
+/* #banner h3 { */
+/* 	font-size: 2.2em; */
+/* 	margin: 0.5em 0 0.5em 0; */
+/* } */
 
 #banner h4 {
 	font-size: 1.5em;

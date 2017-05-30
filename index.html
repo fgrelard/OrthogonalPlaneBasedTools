@@ -27,6 +27,7 @@
 	
   </head>
   <body class="homepage" onload="changeImage('RG3D.png')">
+    <a href="https://github.com/fgrelard/OrthogonalPlaneBasedTools"><img style="position: fixed; top: 0; left: 0; border: 0;z-index:100000" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
 	<div id="page-wrapper">
 
 	  <!-- Header -->
@@ -39,11 +40,32 @@
 			<h1><a href="index.html"><span style="display:none;">Geometrical analysis of</span>tubular organs</a></h1>
 		  </div>
 		  <p class="contacts"> Bordeaux University <span class="emph">&gt;</span> LaBRI
-            <span class="info emph contactname"> Contacts </span> <br/>
-            <span class="info"><span class="contactname">Florent Gr&eacute;lard</span> <span style="display:inline-block; width: 30px;"> </span> florent.grelard <span class="emph">[at]</span> labri.fr </span> <br/>
-            <span class="info"><span class="contactname">Fabien Baldacci</span> <span  style="display:inline-block; width: 30px;"> </span> fabien.baldacci <span class="emph">[at]</span> labri.fr </span> <br/>
-            <span class="info"><span class="contactname">Anne Vialard</span> <span  style="display:inline-block; width: 30px;"> </span> anne.vialard <span class="emph">[at]</span> labri.fr </span> <br/>
-            <span class="info"><span class="contactname">Jean-Philippe Domenger</span> <span  style="display:inline-block; width: 30px;"> </span> domenger<span class="emph">[at]</span> labri.fr </span> </p>
+          
+              <table class="tg" >
+                <tr>
+                  <th class="tg-031e">  <span class="emph importantInfo">Contacts</th>
+                  <th class="tg-yw4l"></th>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Florent Grélard</span></td>
+                  <td class="tg-yw4l">florent.grelard <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Fabien Baldacci</span><br></td>
+                  <td class="tg-yw4l">fabien.baldacci <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Anne Vialard</span><br></td>
+                  <td class="tg-yw4l">anne.vialard <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Jean-Philippe Domenger</span><br></td>
+                  <td class="tg-yw4l">domenger <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+              </table>
+              </span>
+            </p>
+              
 		</header>
 	  </div>
 
@@ -53,11 +75,12 @@
 		  <div class="row">
 			<div class="5u 12u(medium)">
 			  <h3>Curve-skeleton comparison</h3>
-			  <p>This page allows comparison of our curve-skeletonization method with various other state-of-the-art methods: [Cornea et al.], [Lee et al.], [Palagyi et al.] and [Couprie et al.].</p>
-              <p>
-                You can hover on the images for close-up views of the skeletons. Use the arrows to switch between the four state-of-the-art skeletonization algorithms.
+			  <p class="description">This page allows comparison of our curve-skeletonization method with various other state-of-the-art methods: Cornea et al. [<a href="#CorneaSYB05">1</a>], Lee et al. [<a href="#leeskeleton">2</a>], Palagyi et al. [<a href="#Palagyi99">3</a>] and Couprie et al. [<a href="#Couprie07">4</a>].</p>
+              <p class="description">
+                You can hover the mouse over the images for close-up views of the skeletons. Use the arrows to switch between the four state-of-the-art skeletonization algorithms.
               </p>
-              <p> Select the input data in drop-down menu below: </p>
+              <p class="description"> Select the input data in drop-down menu below: </p>
+
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                   Airway #3
@@ -87,7 +110,7 @@
 			</div>
 
 			  <div class="7u 12u(medium)">
-                <span class="contactname"> Visual comparisons: </span>
+                <span class="importantInfo"> Visual comparisons: </span>
 
                 <div class="row">
                   <div class="6u 12u(medium)">
@@ -165,17 +188,83 @@
 		      </div>
             </div>
           </div>
+          
 		</div>
 	  </div>
 
        <div id="banner-wrapper">
 		 <div id="banner" class="box container">
-           <h3>Technical report</h3>
+           <h3><a name="report">Technical report</a></h3>
            Our methods for tubular organ analysis are based on the Voronoi Covariance Measure (VCM). <br/>
-           A technical report regarding the parameter study of the VCM is available <url>here</url> 
+           A technical report regarding the parameter study of the VCM is available <a href="assets/pdf/supplementary_material.pdf">here</a>. 
          </div>
         </div>
 
+
+        <div id="banner-wrapper">
+		 <div id="banner" class="box container">
+           <h3><a name="report">References</a></h3>
+          <p>
+            <table>
+
+                <tr valign="top">
+                    <td align="right" class="bibtexnumber">
+                      [<a name="CorneaSYB05">1</a>]
+                    </td>
+                    <td class="bibtexitem">
+                      Nicu&nbsp;D. Cornea, Deborah Silver, Xiaosong Yuan, et&nbsp;al.
+                      Computing hierarchical curve-skeletons of 3D objects.
+                      <em>The Visual Computer</em>, 2005.
+                      
+                    </td>
+                  </tr>
+
+              <tr valign="top">
+                <td align="right" class="bibtexnumber">
+                  [<a name="leeskeleton">2</a>]
+                </td>
+                <td class="bibtexitem">
+                      Ta-Chih Lee, Rangasami&nbsp;L. Kashyap, and Chong-Nam Chu.
+                      Building skeleton models via 3-d medial surface/axis thinning
+                      algorithms.
+                      <em>CVGIP: Graph. Models Image Process.</em>, 56(6):462--478, 1994.
+                      
+
+                    </td>
+                  </tr>
+
+
+                  <tr valign="top">
+                    <td align="right" class="bibtexnumber">
+                      [<a name="Palagyi99">3</a>]
+                    </td>
+                    <td class="bibtexitem">
+                      K&aacute;lm&aacute;n Pal&aacute;gyi and Attila Kuba.
+                      Directional 3d thinning using 8 subiterations.
+                      In <em>DGCI'99</em>, pages 325--336. Springer Berlin Heidelberg, 1999.
+                    
+
+                    </td>
+                  </tr>
+
+                    <tr valign="top">
+                    <td align="right" class="bibtexnumber">
+                      [<a name="Couprie07">4</a>]
+                    </td>
+                    <td class="bibtexitem">
+                      Michel Couprie, David Coeurjolly, and Rita Zrour.
+                      Discrete bisector function and Euclidean skeleton in 2D and 3D.
+                      <em>Image and Vision Computing</em>, 25(10):1519--1698, October 2007.
+                      
+
+                    </td>
+                  </tr>
+
+
+                </table>
+              </p>
+         </div>
+        </div>
 	  <!-- Footer -->
 	  <div id="copyright">
 		<p>&copy; Florent Gr&eacute;lard. All rights reserved | Design: <a href="http://html5up.net">HTML5 UP</a></p>
