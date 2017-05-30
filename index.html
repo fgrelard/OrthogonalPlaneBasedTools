@@ -16,21 +16,17 @@
 	<link rel="alternate" href="http://www.labri.fr/perso/fgrelard/index.html"  hreflang="fr" />
 	
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->	
-	<link rel="stylesheet" href="http://bibbase.org/css/styles/side.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="http://bibbase.org/css/styles/common.css" type="text/css" media="screen">
 
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	<link rel="stylesheet" href="assets/css/bibbase.css" type="text/css" media="screen">
 	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 
-	<style id="bibbase_style_read"></style>
 	
   </head>
-  <body class="homepage">
+  <body class="homepage" onload="changeImage('RG3D.png')">
 	<div id="page-wrapper">
 
 	  <!-- Header -->
@@ -55,14 +51,16 @@
 	  <div id="banner-wrapper">
 		<div id="banner" class="box container">
 		  <div class="row">
-			<div class="4u 12u(medium)">
-			  <h3>About</h3>
-			  <p>This page allows comparison of our curve-skeletonization method with various other state-of-the-art methods.</p>
-
+			<div class="5u 12u(medium)">
+			  <h3>Curve-skeleton comparison</h3>
+			  <p>This page allows comparison of our curve-skeletonization method with various other state-of-the-art methods: [Cornea et al.], [Lee et al.], [Palagyi et al.] and [Couprie et al.].</p>
+              <p>
+                You can hover on the images for close-up views of the skeletons. Use the arrows to switch between the four state-of-the-art skeletonization algorithms.
+              </p>
               <p> Select the input data in drop-down menu below: </p>
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Select data...
+                  Airway #3
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -84,20 +82,25 @@
                   <li><a href="#" onclick="changeImage('pelvis.png')" style="text-decoration: none">Pelvic arteries</a></li>
                 </ul>
               </div>
+
+
 			</div>
 
-			  <div class="8u 12u(medium)">
+			  <div class="7u 12u(medium)">
                 <span class="contactname"> Visual comparisons: </span>
 
                 <div class="row">
-                  <div class="5u 12u(medium)">
+                  <div class="6u 12u(medium)">
                     <div class="magnify">
 	                  <div class="large" id="largeOurs"> </div>
+                      <figure>
                       <img class="small" id="imgOurMethod" alt="Our method">
+                      <figcaption>Our method</figcaption>
+                      </figure>
                     </div>
                   </div>
 
-                <div class="5u 12u(medium)">
+                <div class="6u 12u(medium)">
 			      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
 
 
@@ -165,6 +168,14 @@
 		</div>
 	  </div>
 
+       <div id="banner-wrapper">
+		 <div id="banner" class="box container">
+           <h3>Technical report</h3>
+           Our methods for tubular organ analysis are based on the Voronoi Covariance Measure (VCM). <br/>
+           A technical report regarding the parameter study of the VCM is available at:  
+         </div>
+        </div>
+
 	  <!-- Footer -->
 	  <div id="copyright">
 		<p>&copy; Florent Gr&eacute;lard. All rights reserved | Design: <a href="http://html5up.net">HTML5 UP</a></p>
@@ -183,12 +194,6 @@
 	
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<!--<script type="text/javascript">
-	  $('.carousel').carousel({
-	  interval: 4000
-	  })
-	</script> -->
-
     <script type="text/javascript">
       $(".dropdown-menu li a").click(function(){
       $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
@@ -196,6 +201,6 @@
       });
     </script>
     <script src="assets/js/magnify.js"></script>
-    <script src="assets/js/image.js" ></script>
+    
   </body>
 </html>
