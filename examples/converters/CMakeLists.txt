@@ -1,7 +1,7 @@
 if (WITH_ITK)
   SET(DGTAL_CONTRIB_EXAMPLES
-    dicom2vol
-    vol2dicom
+    itk2vol
+    vol2itk
     )
 endif(WITH_ITK)
 
