@@ -2130,8 +2130,14 @@ img {
    margin: 0 auto;
 }
 
+
+
 figure figcaption {
     text-align: center;
+}
+
+figcaption {
+    line-height:8em;
 }
 
 /*Some CSS*/
