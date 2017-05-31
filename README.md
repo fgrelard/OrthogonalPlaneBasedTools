@@ -47,4 +47,4 @@ They all provide a self-contained description on how to use them, available with
 Data
 ========================
 The input format data is .vol (DGtal file format). Converters from vol to any ITK format (vol2itk) and from ITK to vol (itk2vol) are available assuming DGtal has been compiled with ITK.
-The data folder contains the data which has been used to generate and compare the skeletons at (https://fgrelard.github.io/GeometryTubularOrgans/#).
+The data folder contains the data which has been used to generate and compare the skeletons [here](https://fgrelard.github.io/OrthogonalPlaneBasedTools).
