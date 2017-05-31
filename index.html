@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  -->
+<html lang="en">
+  <head>
+
+	<meta name="author" content="Florent Grélard" >
+	<meta name="keywords" content="florent grelard grélard" >
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Geometrical Analysis of Tubular Organs</title>
+	<link rel="alternate" href="http://www.labri.fr/perso/fgrelard/index.html"  hreflang="fr" />
+	
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->	
+
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+
+	
+  </head>
+  <body class="homepage" onload="changeImage('RG3D.png')">
+    <a href="https://github.com/fgrelard/OrthogonalPlaneBasedTools"><img style="position: fixed; top: 0; left: 0; border: 0;z-index:100000" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+	<div id="page-wrapper">
+
+	  <!-- Header -->
+	  <div id="header-wrapper">
+		<header id="header" class="container">
+
+		  <!-- Logo -->
+		  <div id="logo">
+			<h2>Geometrical analysis of</h2>
+			<h1><a href="index.html"><span style="display:none;">Geometrical analysis of</span>tubular organs</a></h1>
+		  </div>
+		  <p class="contacts"> Bordeaux University <span class="emph">&gt;</span> LaBRI
+          
+              <table class="tg" >
+                <tr>
+                  <th class="tg-031e">  <span class="emph importantInfo">Contacts</th>
+                  <th class="tg-yw4l"></th>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Florent Grélard</span></td>
+                  <td class="tg-yw4l">florent.grelard <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Fabien Baldacci</span><br></td>
+                  <td class="tg-yw4l">fabien.baldacci <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Anne Vialard</span><br></td>
+                  <td class="tg-yw4l">anne.vialard <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+                <tr>
+                  <td class="tg-yw4l"><span class="importantInfo">Jean-Philippe Domenger</span><br></td>
+                  <td class="tg-yw4l">domenger <span class="emph">[at]</span> labri.fr<br></td>
+                </tr>
+              </table>
+              </span>
+            </p>
+              
+		</header>
+	  </div>
+
+	  <!-- Banner -->
+	  <div id="banner-wrapper">
+		<div id="banner" class="box container">
+		  <div class="row">
+			<div class="5u 12u(medium)">
+			  <h3>Curve-skeleton comparison</h3>
+			  <p class="description">This page allows comparison of our curve-skeletonization method with various other state-of-the-art methods: Cornea et al. [<a href="#CorneaSYB05">1</a>], Lee et al. [<a href="#leeskeleton">2</a>], Palagyi et al. [<a href="#Palagyi99">3</a>] and Couprie et al. [<a href="#Couprie07">4</a>].</p>
+              <p class="description">
+                You can hover the mouse over the images for close-up views of the skeletons. Use the arrows to switch between the four state-of-the-art skeletonization algorithms.
+              </p>
+              <p class="description"> Select the input data in drop-down menu below: </p>
+
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Airway #3
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#" onclick="changeImage('cylindernoisytranslated.png')" style="text-decoration: none">Synthetic volume #1</a></li>
+                  <li><a href="#" onclick="changeImage('deformedCylinder_filled.png')"  style="text-decoration: none">Synthetic volume #2</a></li>
+                  <li><a href="#" onclick="changeImage('boudin7noisy.png')" style="text-decoration: none">Synthetic volume #3</a></li>
+                  <li><a href="#" onclick="changeImage('junction045Noisy.png')" style="text-decoration: none">Synthetic volume #4</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#" onclick="changeImage('bronche.png')" style="text-decoration: none">Airway #1</a></li>
+                  <li><a href="#" onclick="changeImage('bronche2.png')" style="text-decoration: none">Airway #2</a></li>
+                  <li><a href="#" onclick="changeImage('RG3D.png')" style="text-decoration: none">Airway #3</a></li>
+                  <li><a href="#" onclick="changeImage('spacebound.png')" style="text-decoration: none">Airway #4</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#" onclick="changeImage('tube250.png')" style="text-decoration: none">Neurite #1</a></li>
+                  <li><a href="#" onclick="changeImage('tube255.png')" style="text-decoration: none">Neurite #2</a></li>
+                  <li><a href="#" onclick="changeImage('tube258.png')" style="text-decoration: none">Neurite #3</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#" onclick="changeImage('coronary.png')" style="text-decoration: none">Coronary arteries</a></li>
+                  <li><a href="#" onclick="changeImage('pelvis.png')" style="text-decoration: none">Pelvic arteries</a></li>
+                </ul>
+              </div>
+
+
+			</div>
+
+			  <div class="7u 12u(medium)">
+                <span class="importantInfo"> Visual comparisons: </span>
+
+                <div class="row">
+                  <div class="6u 12u(medium)">
+                    <div class="magnify">
+	                  <div class="large" id="largeOurs"> </div>
+                      <figure>
+                      <img class="small" id="imgOurMethod" alt="Our method">
+                      <figcaption>Our method</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                <div class="6u 12u(medium)">
+			      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+
+				    <!-- Wrapper for slides -->
+				    <div class="carousel-inner" role="listbox">
+				      <div class="item active">
+                        <div class="magnify">
+	                      <div class="large" id="largeCornea"> </div>
+				          <img src="Cornea/curvevoronoi.png" alt="Cornea" id="cornea">
+                          </div>
+					      <div class="carousel-caption">
+					      Cornea
+					    </div>
+				      </div>
+				      <div class="item">
+                         <div class="magnify">
+	                       <div class="large" id="largeLee"> </div>
+					       <img src="Lee/tangent3d.png" alt="Lee" id="lee">
+                           </div>
+					    <div class="carousel-caption">
+					      Lee
+					    </div>
+				      </div>
+				      <div class="item">
+                        <div class="magnify">
+	                      <div class="large" id="largePalagyi"> </div>
+					      <img src="Palagyi/cylindercone.png" alt="Palagyi" id="palagyi">
+                        </div>
+					    <div class="carousel-caption">
+					      Palagyi
+					    </div>
+				      </div>
+				      <div class="item">
+                        <div class="magnify">
+	                      <div class="large" id="largeCouprie"> </div>
+					      <img src="Couprie/vcmfullcloseup.jpg.png" alt="Couprie" id="couprie">
+                          </div>
+					    <div class="carousel-caption">
+					      Couprie
+					    </div>
+				      </div>
+				    </div>
+
+				    <!-- Controls -->
+				    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				      <span class="sr-only">Previous</span>
+				    </a>
+				    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				      <span class="sr-only">Next</span>
+				    </a>
+				    <!-- Indicators -->
+				    <ol class="carousel-indicators">
+				      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				    </ol>
+			      </div>
+			    </div>
+		      </div>
+            </div>
+          </div>
+          
+		</div>
+	  </div>
+
+       <div id="banner-wrapper">
+		 <div id="banner" class="box container">
+           <h3><a name="report">Technical report</a></h3>
+           Our methods for tubular organ analysis are based on the Voronoi Covariance Measure (VCM). <br/>
+           A technical report regarding the parameter study of the VCM is available <a href="assets/pdf/supplementary_material.pdf">here</a>. 
+         </div>
+        </div>
+
+
+        <div id="banner-wrapper">
+		 <div id="banner" class="box container">
+           <h3><a name="report">References</a></h3>
+          <p>
+            <table>
+
+                <tr valign="top">
+                    <td align="right" class="bibtexnumber">
+                      [<a name="CorneaSYB05">1</a>]
+                    </td>
+                    <td class="bibtexitem">
+                      Nicu&nbsp;D. Cornea, Deborah Silver, Xiaosong Yuan, et&nbsp;al.
+                      Computing hierarchical curve-skeletons of 3D objects.
+                      <em>The Visual Computer</em>, 2005.
+                      
+                    </td>
+                  </tr>
+
+              <tr valign="top">
+                <td align="right" class="bibtexnumber">
+                  [<a name="leeskeleton">2</a>]
+                </td>
+                <td class="bibtexitem">
+                      Ta-Chih Lee, Rangasami&nbsp;L. Kashyap, and Chong-Nam Chu.
+                      Building skeleton models via 3-d medial surface/axis thinning
+                      algorithms.
+                      <em>CVGIP: Graph. Models Image Process.</em>, 56(6):462--478, 1994.
+                      
+
+                    </td>
+                  </tr>
+
+
+                  <tr valign="top">
+                    <td align="right" class="bibtexnumber">
+                      [<a name="Palagyi99">3</a>]
+                    </td>
+                    <td class="bibtexitem">
+                      K&aacute;lm&aacute;n Pal&aacute;gyi and Attila Kuba.
+                      Directional 3d thinning using 8 subiterations.
+                      In <em>DGCI'99</em>, pages 325--336. Springer Berlin Heidelberg, 1999.
+                    
+
+                    </td>
+                  </tr>
+
+                    <tr valign="top">
+                    <td align="right" class="bibtexnumber">
+                      [<a name="Couprie07">4</a>]
+                    </td>
+                    <td class="bibtexitem">
+                      Michel Couprie, David Coeurjolly, and Rita Zrour.
+                      Discrete bisector function and Euclidean skeleton in 2D and 3D.
+                      <em>Image and Vision Computing</em>, 25(10):1519--1698, October 2007.
+                      
+
+                    </td>
+                  </tr>
+
+
+                </table>
+              </p>
+         </div>
+        </div>
+	  <!-- Footer -->
+	  <div id="copyright">
+		<p>&copy; Florent Gr&eacute;lard. All rights reserved | Design: <a href="http://html5up.net">HTML5 UP</a></p>
+	  </div>
+	  
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+    
+
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(".dropdown-menu li a").click(function(){
+      $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+      $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+      });
+    </script>
+    <script src="assets/js/magnify.js"></script>
+    
+  </body>
+</html>

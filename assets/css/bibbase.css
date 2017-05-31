@@ -1,0 +1,15 @@
+img.bibbase_icon {
+    width: 20px;
+    max-height: 15px;
+    vertical-align: text-top;
+   
+}
+
+img.bibbase_icon:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.bibbase_icon {
+    display: inline-block;
+}
