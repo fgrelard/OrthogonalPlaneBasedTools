@@ -113,7 +113,7 @@ Container CurveProcessor<Container>::endPoints() {
         if (neighbors.size() <= 1)
             endPoints.insert(p);
 
-            //Is it in same quadrant: case connectivity != 26
+        //Is it in same quadrant: case connectivity != 26
         else {
             RealVector previous;
             bool isEndPoint = true;
@@ -268,8 +268,8 @@ fillHoles(const Container &setVolume) {
     objectImage.writeComponents(inserterCC);
     sort(skeletonCC.begin(), skeletonCC.end(), [&](const ObjectType &one,
                                                    const ObjectType &two) {
-        return one.size() > two.size();
-    });
+             return one.size() > two.size();
+         });
     Container myOneCCCurve = myCurve;
 
     bool shouldStop = false;
@@ -318,6 +318,17 @@ fillHolesNotInSet(const Container &set, const Container &setVolume) {
         if (!vPair.isUndefined()) {
             Point first = vPair.first();
             Point second = vPair.second();
+
+            AStarAlgorithm<Point, Container> linkAstar(first, second, setVolume);
+            std::vector<Point> linkA = linkAstar.linkPoints();
+
+            BresenhamAlgorithm<Point> linkBresenham(first, second);
+            std::vector<Point> linkB = linkBresenham.linkPoints();
+            if (linkB.size() * 5 < linkA.size())
+                vPair = ConnectedComponentMerger<Space>(skeletonCC, graph);
+
+            first = vPair.first();
+            second = vPair.second();
 
             RealVector dirFirst = (second - first).getNormalized();
             RealVector dirSecond = (first - second).getNormalized();
