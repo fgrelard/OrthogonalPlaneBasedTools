@@ -18,8 +18,8 @@ Quick Build Instructions
 The main instructions on linux/unix-based systems are the following:
 
 ```shell
-git clone https://github.com/fgrelard/MyDGtalContrib.git
-cd MyDGtalContrib ; mkdir build ; cd build
+git clone https://github.com/fgrelard/OrthogonalPlaneBasedTools.git
+cd OrthogonalPlaneBasedTools ; mkdir build ; cd build
 cmake ..
 make
 ```
