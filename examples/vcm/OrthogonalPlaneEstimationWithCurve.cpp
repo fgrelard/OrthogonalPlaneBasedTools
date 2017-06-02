@@ -1,5 +1,5 @@
 #include <iostream>
-#include <QtGui/qapplication.h>
+
 #include "DGtal/base/Common.h"
 #include "DGtal/helpers/StdDefs.h"
 #include "DGtal/io/viewers/Viewer3D.h"
@@ -17,7 +17,7 @@
 #include "shapes/DigitalPlane.h"
 #include "geometry/DigitalPlaneProcessor.h"
 #include "geometry/CurveProcessor.h"
-
+#include "geometry/CurveDecomposition.h"
 using namespace std;
 using namespace DGtal;
 namespace po = boost::program_options;
@@ -36,7 +36,7 @@ int main( int  argc, char**  argv )
                 ("thresholdMin,m", po::value<int>()->default_value(1), "minimum threshold for binarization")
                 ("thresholdMax,M", po::value<int>()->default_value(255), "maximum threshold for binarization")
                 ("radiusInside,R", po::value<double>()->default_value(7), "radius of the ball inside voronoi cell")
-                ("radiusNeighbour,r", po::value<double>()->default_value(10), "radius of the ball for the neighbourhood")
+                ("radiusNeighbour,r", po::value<double>()->default_value(5), "radius of the ball for the neighbourhood")
                 ;
 
         bool parseOK=true;
@@ -80,8 +80,15 @@ int main( int  argc, char**  argv )
         SetFromImage<Z3i::DigitalSet>::append<Image> (setCurve, curve,
                                                       thresholdMin-1, thresholdMax);
 
-        CurveProcessor<Z3i::DigitalSet> curveProc(setCurve);
-        std::vector<Z3i::Point> orderedCurve = curveProc.convertToOrderedCurve();
+        CurveProcessor<Z3i::DigitalSet> curveProcessor(setCurve);
+        Z3i::DigitalSet endp = curveProcessor.endPoints();
+        Z3i::DigitalSet branch = curveProcessor.branchingPoints();
+        CurveDecomposition<Z3i::DigitalSet> curveDecompo(setCurve, branch);
+        std::vector<Z3i::Point> orderedCurve;
+        if (endp.size() > 0)
+            orderedCurve = curveDecompo.curveTraversalForGraphDecomposition(*endp.begin());
+        else
+            orderedCurve = curveDecompo.curveTraversalForGraphDecomposition(*setCurve.begin());
 
 
         QApplication application(argc,argv);
@@ -103,7 +110,7 @@ int main( int  argc, char**  argv )
                 viewer.setFillTransparency(255);
 
                 Z3i::Point current= *it; //it->getPoint();
-                DigitalPlane<Z3i::Space> plane = orthogonalPlaneEstimator.convergentPlaneAt(current, setVolume, 100);
+                DigitalPlane<Z3i::Space> plane = orthogonalPlaneEstimator.planeAt(current);
                 DigitalPlaneProcessor<Z3i::Space> planeProc(plane);
                 std::vector<Z3i::RealVector> points = planeProc.planeToQuadrangle();
                 double f = 20.0;

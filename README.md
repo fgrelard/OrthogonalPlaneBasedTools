@@ -20,7 +20,7 @@ The main instructions on linux/unix-based systems are the following:
 ```shell
 git clone https://github.com/fgrelard/OrthogonalPlaneBasedTools.git
 cd OrthogonalPlaneBasedTools ; mkdir build ; cd build
-cmake ..
+cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 ```
 
@@ -38,6 +38,12 @@ Usage
 Executables are located in the build directory. 
 They all provide a self-contained description on how to use them, available with the option -h.
 
+Examples:
+```shell
+./OrthogonalPlaneEstimation -h
+./OrthogonalPlaneEstimation -i ../data/airway1.vol
+```
+Details:
 * OrthogonalPlaneEstimation and OrthogonalPlaneEstimationWithCurve allow to estimate orthogonal planes directly from the volume and from the curve respectively.
 * PruningSkeletonOrthogonalPlanes allow to remove spurious branches on an existing skeleton
 * RecenterSkeletonPoints is dedicated to the recentering of an existing non-centered skeleton

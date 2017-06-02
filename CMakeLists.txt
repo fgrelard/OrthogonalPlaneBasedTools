@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.1)
-project(MyDGtalContrib)
+project(OrthogonalPlaneBasedTools)
 
 find_package(DGtal REQUIRED)
 include_directories(${DGTAL_INCLUDE_DIRS})
@@ -22,7 +22,6 @@ if (NOT WITH_VISU3D_QGLVIEWER)
 endif()
 
 include_directories(${CMAKE_SOURCE_DIR}/src/)
-option(BUILD_TESTS "Build test programs" OFF)
 option(BUILD_EXAMPLES "Build examples programs" ON)
 option(WITH_OMP "Parallelization with OpenMP" OFF)
 
