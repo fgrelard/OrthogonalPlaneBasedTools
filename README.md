@@ -2,7 +2,7 @@
 
 Description
 ===========
-Algorithms implemented thanks to the [DGtal Library](http://dgtal.org/)
+Source code for [*New methods for the geometrical analysis of tubular organs*](https://www.sciencedirect.com/science/article/pii/S1361841517301226?via%3Dihub), by Florent Grélard, Fabien Baldacci, Anne Vialard and Jean-Philippe Domenger, published in Medical Image Analysis (Volume 42, December 2017, Pages 89-101) 
 
 On tubular volumes:
 
@@ -10,6 +10,8 @@ On tubular volumes:
 * Pruning algorithm using orthogonal planes
 * Recentering procedure
 * Curve-skeleton extraction
+
+Algorithms implemented thanks to the [DGtal Library](http://dgtal.org/)
 
 
 
@@ -57,3 +59,8 @@ Data
 ========================
 The input format data is .vol (DGtal file format). Converters from vol to any ITK format (vol2itk) and from ITK to vol (itk2vol) are available assuming DGtal has been compiled with ITK.
 The data folder contains the data which has been used to generate and compare the skeletons [here](https://fgrelard.github.io/OrthogonalPlaneBasedTools).
+
+Questions
+========================
+Contact at florent [dot] grelard [at] u-bordeaux [dot] fr
+
