@@ -40,6 +40,7 @@ public:
     typedef typename Container::value_type Point;
     typedef DGtal::SpaceND<Point::dimension, DGtal::int32_t> Space;
     typedef typename Space::RealVector RealVector;
+    typedef typename Space::RealPoint RealPoint;
     typedef DGtal::HyperRectDomain<Space> Domain;
     typedef DGtal::ExactPredicateLpSeparableMetric<Space, 2> L2Metric;
     typedef VCMAdjustableRadius<Space, L2Metric> VCM;
@@ -221,7 +222,7 @@ isConvergenceReached(const Container &volume,
         int scalar = 1;
         auto itSetVolume = std::find(volume.begin(), volume.end(), current);
         while (itSetVolume != volume.end()) {
-            current = plane.getCenter() + dirVector * scalar;
+            current = Point(RealPoint(plane.getCenter()) + dirVector * scalar);
             scalar++;
             itSetVolume = std::find(volume.begin(), volume.end(), current);
         }

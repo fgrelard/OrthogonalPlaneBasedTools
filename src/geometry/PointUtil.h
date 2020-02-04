@@ -71,7 +71,7 @@ trackPoint(const Container &container, const Point &start, const RealVector &vec
     int scalar = 1;
     while (container.find(point) != container.end()) {
         previous = point;
-        point = start + vector * scalar;
+        point = Point(RealVector(start) + vector * scalar);
         scalar++;
     }
     return previous;

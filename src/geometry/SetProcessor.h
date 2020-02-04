@@ -70,7 +70,7 @@ private:
 template<typename Container>
 typename SetProcessor<Container>::Point
 SetProcessor<Container>::closestPointAt(const RealPoint &point) {
-    if (myContainer->size() == 0) return point;
+    if (myContainer->size() == 0) return SetProcessor<Container>::Point(point);
     return (*std::min_element(myContainer->begin(), myContainer->end(), [&](const Point &p1, const Point &p2) {
         return (Distance::euclideanDistance((RealPoint) p1, point) <
                 Distance::euclideanDistance((RealPoint) p2, point));

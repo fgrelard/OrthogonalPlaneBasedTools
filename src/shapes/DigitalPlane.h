@@ -35,7 +35,7 @@ public:
 
     DigitalPlane(const Point &aPoint, const Vector &aNormal, int aConnexity = 26);
 
-    DigitalPlane(const DigitalPlane &other) : myPoint(other.myPoint), myPlaneEquation(other.myPlaneEquation),
+    DigitalPlane(const DigitalPlane &other) : myPoint((Point)other.myPoint), myPlaneEquation(other.myPlaneEquation),
                                               myConnexity(other.myConnexity) {}
 
 public:

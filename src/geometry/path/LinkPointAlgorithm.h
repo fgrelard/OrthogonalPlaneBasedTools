@@ -14,12 +14,16 @@ public:
     LinkPointAlgorithm() {}
 
     LinkPointAlgorithm(const Point &aSource, const Point &aDestination) : mySource(aSource),
+
                                                                           myDestination(aDestination) {}
 
     LinkPointAlgorithm(const LinkPointAlgorithm &other) : mySource(other.mySource),
                                                           myDestination(other.myDestination) {}
 
+    virtual ~LinkPointAlgorithm() = default;
+
     virtual Path linkPoints() = 0;
+
 
 protected:
     Point mySource;

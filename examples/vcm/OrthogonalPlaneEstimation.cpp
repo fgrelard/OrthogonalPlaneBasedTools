@@ -107,6 +107,8 @@ int main( int  argc, char**  argv )
     Viewer3D<> viewer;
     viewer.show();
 
+
+    DGtal::trace.info() << "VCM" << std::endl;
     double radiusVCM = r;
     KernelFunction chi(1.0, radiusVCM);
     OrthoPlaneEstimator orthogonalPlaneEstimator(setVolume, chi, R, r);
@@ -114,11 +116,12 @@ int main( int  argc, char**  argv )
     int sliceNumber = 0;
     int moduloFactor = setVolume.size() / 1000;
     L2Metric l2Metric;
-    double distanceB = 8;
+    double distanceB = 20;
     Z3i::DigitalSet setB(setVolume.domain());
     DTL2 dt(&setVolume.domain(), &setVolume, &l2Metric);
     for (auto it = setVolume.begin(), ite = setVolume.end();
          it != ite; ++it) {
+        DGtal::trace.progressBar(setB.size(), setVolume.size());
         if (setB.find(*it) != setB.end()) continue;
         sliceNumber++;
         // Compute VCM and diagonalize it.
@@ -130,8 +133,10 @@ int main( int  argc, char**  argv )
         orthogonalPlaneEstimator.setRadius(radius);
         DigitalPlane<Z3i::Space> plane = orthogonalPlaneEstimator.convergentPlaneAt(current, setVolume, 100);
         Z3i::RealVector normal = plane.getPlaneEquation().normal();
-        DigitalPlane<Z3i::Space> planeBefore(current - distanceB * normal, normal);
-        DigitalPlane<Z3i::Space> planeAfter(current + distanceB * normal, -normal);
+        Z3i::RealPoint centerBefore = Z3i::RealPoint(current) - distanceB * normal;
+        Z3i::RealPoint centerAfter = Z3i::RealVector(current) + distanceB * normal;
+        DigitalPlane<Z3i::Space> planeBefore(Z3i::Point(centerBefore), normal);
+        DigitalPlane<Z3i::Space> planeAfter(Z3i::Point(centerAfter), -normal);
         Z3i::DigitalSet diff = markPointsBetweenPlanes(setVolume, planeBefore, planeAfter, 100);
         setB.insert(diff.begin(), diff.end());
         DigitalPlaneProcessor<Z3i::Space> planeProc(plane);

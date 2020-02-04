@@ -15,6 +15,7 @@
 #include "geometry/DistanceToPointFunctor.h"
 #include "geometry/MedialAxis.h"
 #include "shapes/DigitalPlaneSet.h"
+#include "geometry/Distance.h"
 #include "geometry/SetProcessor.h"
 #include "geometry/CurveProcessor.h"
 #include "geometry/SphericalShellIntersection.h"
@@ -239,7 +240,7 @@ skeletonize() {
 
         RealPoint centerOfMass = ShapeDescriptor<Container>(planePoints).extractCenterOfMass();
 
-        if (centerOfMass != RealPoint::zero && l2Metric(centerOfMass, p) <= sqrt(3)) {
+        if (centerOfMass != RealPoint::zero && Distance::euclideanDistance(centerOfMass, RealPoint(p)) <= sqrt(3)) {
             Point g = SetProcessor<Container>(planePoints).closestPointAt(centerOfMass);
             RealVector normal = plane.getPlaneEquation().normal();
             int connexity = plane.getConnexity();
@@ -298,7 +299,7 @@ trackNextPoint(const PlaneSet &planeSet) {
     double scalar = 1.0;
     while (current == center ||
            set.find(current) != set.end()) {
-        current = center + direction * scalar;
+        current = Point(RealPoint(center) + direction * scalar);
         scalar += 0.5;
     }
     if (myVolume->find(current) == myVolume->end() ||
@@ -307,7 +308,7 @@ trackNextPoint(const PlaneSet &planeSet) {
         current = center;
         while (current == center ||
                set.find(current) != set.end()) {
-            current = center - direction * scalar;
+            current = Point(RealPoint(center - direction * scalar));
             scalar += 0.5;
         }
         if (myVolume->find(current) == myVolume->end() ||
