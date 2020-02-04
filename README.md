@@ -46,7 +46,7 @@ They all provide a self-contained description on how to use them, available with
 Examples:
 ```shell
 ./OrthogonalPlaneEstimation -h
-./OrthogonalPlaneEstimation -i ../data/airway1.vol
+./OrthogonalPlaneEstimation -i ../data/neurite1.vol
 ```
 Details:
 * OrthogonalPlaneEstimation and OrthogonalPlaneEstimationWithCurve allow to estimate orthogonal planes directly from the volume and from the curve respectively.
