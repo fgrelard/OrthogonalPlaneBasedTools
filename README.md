@@ -30,7 +30,7 @@ Minimum system requirements: C++11 enabled compiler, [cmake](http://cmake.org), 
 
 In order to compile, the following additional libraries are necessary:
 * [QGLViewer](http://libqglviewer.com/) (>=2.5.0)
-* Optionally, [ITK](https://itk.org/) (>= 1.4)
+* Optionally, [ITK](https://itk.org/) (>= 4.0)
 
 DGtal needs to be compiled with these libraries as well (checkout WITH_QGLVIEWER, WITH_EIGEN, and WITH_ITK options with CMake). 
 Make sure WITH_QT5 is ON if your version of QGLViewer depends on QT5 (standard for Ubuntu 16.04LTS).
