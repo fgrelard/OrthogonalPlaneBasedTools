@@ -26,11 +26,11 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 ```
 
-Minimum system requirements: C++11 enabled compiler, [cmake](http://cmake.org), [DGtal](http://dgtal.org/), [boost](http://boost.org) (>= 1.46), [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page) (>=3.2.0)
+Minimum system requirements: C++11 enabled compiler, [cmake](http://cmake.org), [DGtal](http://dgtal.org/) (>= 0.9), [boost](http://boost.org) (>= 1.46), [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page) (>=3.2.0)
 
 In order to compile, the following additional libraries are necessary:
 * [QGLViewer](http://libqglviewer.com/) (>=2.5.0)
-* Optionally, [ITK](https://itk.org/)
+* Optionally, [ITK](https://itk.org/) (>= 1.4)
 
 DGtal needs to be compiled with these libraries as well (checkout WITH_QGLVIEWER, WITH_EIGEN, and WITH_ITK options with CMake). 
 Make sure WITH_QT5 is ON if your version of QGLViewer depends on QT5 (standard for Ubuntu 16.04LTS).
