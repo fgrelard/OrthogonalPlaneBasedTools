@@ -62,5 +62,5 @@ The data folder contains the data which has been used to generate and compare th
 
 Questions
 ========================
-Contact at florent [dot] grelard [at] u-bordeaux [dot] fr
+Contact at florent [dot] grelard [at] inrae [dot] fr
 
